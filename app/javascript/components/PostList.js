@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import TextTruncate from 'react-text-truncate';
 
 class PostList extends React.Component {
 
@@ -36,15 +37,32 @@ class PostList extends React.Component {
       .sort((a, b) => new Date(b.event_date) - new Date(a.event_date));
 
   return filteredPosts.map(post => (
+
       <li key={post.id}>
         <Link to={`/posts/${post.id}`} className={activeId === post.id ? 'active' : ''}>
-          {post.id}. {post.title}
-          <br />
-          {post.description}
-          <br />
-          <img className="object-image responsive" src={post.image} alt="" />
+          <div className="feed-grid">
+            <div className="feed-copy">
+              <h3>
+                {post.id}
+              </h3>
+              <h2>
+                {post.title}
+              </h2>
+              <TextTruncate
+                  line={2}
+                  truncateText="…[Read More]"
+                  text={post.description}
+              />
+              {post.created_at}
+            </div>
+            <div className="feed-image">
+              <img className="object-image responsive" src={post.image} alt="" />
+            </div>
+
+          </div>
         </Link>
       </li>
+
     ));
   }
 
@@ -52,7 +70,7 @@ class PostList extends React.Component {
     return (
       <section className="postList">
         <h2>
-        Events
+        User's Name
         <Link to="/posts/new">New Post</Link>
         </h2>
 
@@ -64,7 +82,7 @@ class PostList extends React.Component {
           onKeyUp={this.updateSearchTerm}
         />
 
-        <ul>{this.renderPosts()}</ul>
+        <ol reversed>{this.renderPosts()}</ol>
       </section>
     );
   }

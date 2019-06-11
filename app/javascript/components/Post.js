@@ -10,18 +10,18 @@ const Post = ({ post, onDelete }) => {
   return(
 
     <div className="postContainer">
-      <h2>
-        {post.title}
-        <br />
-        {post.description}
+      <div>
+        <p>
+          {post.title}
+          <br />
+          {post.description}
+        </p>
+        <img className="object-image responsive" src={post.image} alt="" />
         <Link to={`/posts/${post.id}/edit`}>Edit</Link>
         <button className="delete" type="button" onClick={() => onDelete(post.id)}>
             Delete
         </button>
-      </h2>
-      <img className="object-image responsive" src={post.image} alt="" />
-      <br />
-
+      </div>
     </div>
   );
 };

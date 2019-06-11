@@ -91,7 +91,7 @@ class Feed extends React.Component {
       <div>
         <Header />
         <div className="grid">
-          <PostList posts={posts} activeId={Number(postId)} />
+
           <Switch>
             <PropsRoute
               path="/posts/new"
@@ -115,6 +115,7 @@ class Feed extends React.Component {
             />
 
           </Switch>
+          <PostList posts={posts} activeId={Number(postId)} />
         </div>
       </div>
     );

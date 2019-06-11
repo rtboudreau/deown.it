@@ -6,19 +6,30 @@ body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
   padding: 0;
 }
 
-ul, ol {
+ul {
   list-style: none;
 }
+
+
 
 body {
   font-family: Roboto;
   font-size: 16px;
   line-height: 28px;
+  padding:90px 30px;
+  background-color: #e6ecf0 !important;
 }
 
 header {
-  background: #f57011;
+  background: #0076e4;
   height: 60px;
+  position: fixed;
+  z-index: 100;
+  width:100%;
+  top:0;
+  left:0;
+  padding: 0 0 0 30px;
+
 }
 
 header h1, header h1 a{
@@ -37,21 +48,39 @@ header h1 a:hover {
 
 .postList li:hover, a.active {
   background: #f8e5ce;
+  border-radius: 15px;
+  -webkit-transition: ease all .35s;
+  transition: ease all .35s;
 }
 
 
 .grid {
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 33% auto;
   margin: 25px auto;
   width: 90%;
   height: calc(100vh - 145px);
 }
 
+.feed-grid{
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 10px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "feed-left feed-right";
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+}
+
+
 .postList {
-  background: #f6f6f6;
-  padding: 16px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 9px;
 }
 
 .postList h2 {
@@ -60,24 +89,42 @@ header h1 a:hover {
 }
 
 .postContainer {
+  font-size: 1rem;
+}
+
+.postContainer div {
   font-size: 15px;
-  line-height: 35px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+
 }
 
 .postContainer h2 {
   margin-bottom: 10px;
 }
 
+.postList li{
+  margin: 2rem 0;
+}
+
 .postList li:hover, a.active {
-  background: #f8e5ce;
+  background: #cfcfcf;
+}
+
+a.active .feed-image{
+  filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
+-webkit-filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
+-moz-filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
 }
 
 .postList a {
   display: block;
   color: black;
   text-decoration: none;
-  border-bottom: 1px solid #dddddd;
-  padding: 8px 6px 10px;
   outline: 0;
 }
 
@@ -92,12 +139,14 @@ header h1 a:hover {
 
 .postForm {
   margin-top: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 75px;
 }
 
 label > strong {
   display: inline-block;
   vertical-align: top;
-  text-align: right;
   width: 100px;
   margin-right: 6px;
   font-size: 15px;
@@ -189,9 +238,12 @@ h2 a:hover {
 }
 
 input.search {
-  width: 92%;
-  margin: 15px 2px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
   padding: 4px 0 6px 6px;
+  top: 60px;
+  z-index: 100;
 }
 
 
@@ -201,7 +253,21 @@ input.search {
   height: auto;
 }
 
+.object-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
 
+.postContainer .object-image{
+    -webkit-clip-path: none;
+    clip-path: none;
+    border-radius: 20px;
+  }
 
 
 /**/
@@ -644,4 +710,17 @@ main {
 section:nth-child(odd) figcaption {
     -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
+}
+*/
+
+/* ol:nth-child(odd) {}
+
+li:nth-child(odd) .feed-copy {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+}
+li:nth-child(odd) {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+
 } */

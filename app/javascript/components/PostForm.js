@@ -78,12 +78,13 @@ class PostForm extends React.Component {
 
     return (
       <div>
-        <h2>{ title }</h2>
+
         {this.renderErrors()}
         <form className="postForm" onSubmit={this.handleSubmit}>
+        <h2>{ title }</h2>
           <div>
             <label htmlFor="title">
-              <strong>Title:</strong>
+              <strong>Title:</strong><br />
               <input
                 type="text"
                 id="title"
@@ -95,7 +96,7 @@ class PostForm extends React.Component {
           </div>
           <div>
             <label htmlFor="description">
-              <strong>Description:</strong>
+              <strong>Description:</strong><br />
               <textarea
                 cols="30"
                 rows="10"
@@ -108,7 +109,7 @@ class PostForm extends React.Component {
           </div>
           <div>
             <label htmlFor="image url">
-              <strong>Image URL:</strong>
+              <strong>Image URL:</strong> <br />
               <input
                 type="text"
                 id="image"
