@@ -17,7 +17,7 @@ const Post = ({ post, onDelete }) => {
           {post.description}
         </p>
         <img className="object-image responsive" src={post.image} alt="" />
-        <Link to={`/posts/${post.id}/edit`}>Edit</Link>
+        <Link to={`/posts/${post.id}/edit`}>Edit</Link> | 
         <button className="delete" type="button" onClick={() => onDelete(post.id)}>
             Delete
         </button>

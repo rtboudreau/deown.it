@@ -91,31 +91,40 @@ class Feed extends React.Component {
       <div>
         <Header />
         <div className="grid">
+          <div className="left-side">
+            <div className="profile">
+              <h2>User name and stuff</h2>
+              <p>Items deOwned: {posts.length}</p>
+            </div>
+            <div className="post-forms">
+              <Switch>
+                <PropsRoute
+                  path="/posts/new"
+                  component={PostForm}
+                  onSubmit={this.addPost}
+                />
 
-          <Switch>
-            <PropsRoute
-              path="/posts/new"
-              component={PostForm}
-              onSubmit={this.addPost}
-            />
+                <PropsRoute
+                  exact
+                  path="/posts/:id/edit"
+                  component={PostForm}
+                  post={post}
+                  onSubmit={this.updatePost}
+                />
 
-            <PropsRoute
-              exact
-              path="/posts/:id/edit"
-              component={PostForm}
-              post={post}
-              onSubmit={this.updatePost}
-            />
+                <PropsRoute
+                  path="/posts/:id"
+                  component={Post}
+                  post={post}
+                  onDelete={this.deletePost}
+                />
 
-            <PropsRoute
-              path="/posts/:id"
-              component={Post}
-              post={post}
-              onDelete={this.deletePost}
-            />
-
-          </Switch>
-          <PostList posts={posts} activeId={Number(postId)} />
+              </Switch>
+            </div>
+          </div>
+          <div className="feed">
+            <PostList posts={posts} activeId={Number(postId)} />
+          </div>
         </div>
       </div>
     );

@@ -119,6 +119,20 @@ class PostForm extends React.Component {
               />
             </label>
           </div>
+          <div>
+          <label>Method:</label>
+            <select
+              id="method"
+              name="method"
+              onChange={this.handleInputChange}
+              value={post.method}
+            >
+              <option value="donated">Donated</option>
+              <option value="sold">Sold</option>
+              <option value="garbage">Garbage</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
           <div className="form-actions">
             <button type="submit">Save</button>
             <Link to={cancelURL}>Cancel</Link>
@@ -140,6 +154,7 @@ PostForm.defaultProps = {
     title: '',
     description: '',
     image: '',
+    method: '',
   },
 };
 

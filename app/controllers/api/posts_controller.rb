@@ -30,7 +30,8 @@ class Api::PostsController < ApplicationController
       :id,
       :title,
       :description,
-      :image
+      :image,
+      :method
     )
   end
 end

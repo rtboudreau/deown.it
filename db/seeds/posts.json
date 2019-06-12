@@ -2,27 +2,32 @@
     {
         "title": "first item",
         "description": "in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed ",
-        "image": "https://source.unsplash.com/LxVxPA1LOVM/400x300"
+        "image": "https://source.unsplash.com/ufuk99QfQTg/400x300",
+        "method": "Donated"
     },
     {
         "title": "second item",
         "description": "in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius duis at",
-        "image": "https://source.unsplash.com/mWYhrOiAgmA/400x300"
+        "image": "https://source.unsplash.com/mWYhrOiAgmA/400x300",
+        "method": "Garbage"
     },
     {
         "title": "third item",
         "description": "obortis feugiat vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed ",
-        "image": "https://source.unsplash.com/l8p1aWZqHvE/400x300"
+        "image": "https://source.unsplash.com/6tK2Og9dEKA/400x300",
+        "method": "Sold"
     },
     {
         "title": "fourth item",
         "description": "in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed ",
-        "image": "https://source.unsplash.com/czMy5rFeEbU/400x300"
+        "image": "https://source.unsplash.com/Mz__0nr1AM8/400x300",
+        "method": "Other"
     },
     {
         "title": "fifth item",
         "description": "in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius duis at consectetur ",
-        "image": "https://source.unsplash.com/b2-fBVrfx0o/400x300"
+        "image": "https://source.unsplash.com/Y602iPcTq28/400x300",
+        "method": "Donated"
     }
 
 ]

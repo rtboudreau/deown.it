@@ -48,20 +48,33 @@ header h1 a:hover {
 
 .postList li:hover, a.active {
   background: #f8e5ce;
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   -webkit-transition: ease all .35s;
   transition: ease all .35s;
 }
 
 
-.grid {
+/* .grid {
   display: grid;
   grid-gap: 50px;
   grid-template-columns: 33% auto;
   margin: 25px auto;
   width: 90%;
   height: calc(100vh - 145px);
+} */
+
+.grid {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 33% auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left-side feed";
+  margin: 25px auto;
+  width: 90%;
+  height: calc(100vh - 145px);
 }
+
+.feed { grid-area: feed; }
 
 .feed-grid{
   display: grid;
@@ -73,9 +86,29 @@ header h1 a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-
 }
 
+.left-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px auto;
+  grid-template-areas: "profile" "post-forms";
+  grid-area: left-side;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.post-forms {
+  grid-area: post-forms;
+ }
+
+.post-forms div{
+  position: -webkit-sticky;
+  position: sticky;
+  top:60px;
+}
 
 .postList {
   padding: 20px;
@@ -90,13 +123,13 @@ header h1 a:hover {
 
 .postContainer {
   font-size: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
 }
 
 .postContainer div {
   font-size: 15px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 60px;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -116,9 +149,13 @@ header h1 a:hover {
 }
 
 a.active .feed-image{
-  filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
--webkit-filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
--moz-filter: drop-shadow(-11px 0px 11px rgba(0,0,0,0.3));
+  filter: drop-shadow(-7px 0 9px rgba(0,0,0,0.15));
+-webkit-filter: drop-shadow(-7px 0 9px rgba(0,0,0,0.15));
+-moz-filter: drop-shadow(-7px 0 9px rgba(0,0,0,0.15));
+}
+
+.feed-image img {
+  border-radius: 15px;
 }
 
 .postList a {
@@ -139,9 +176,6 @@ a.active .feed-image{
 
 .postForm {
   margin-top: 15px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 75px;
 }
 
 label > strong {

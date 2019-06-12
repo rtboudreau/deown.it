@@ -46,7 +46,7 @@ class PostList extends React.Component {
                 {post.id}
               </h3>
               <h2>
-                {post.title}
+                {post.title} | {post.method}
               </h2>
               <TextTruncate
                   line={2}
